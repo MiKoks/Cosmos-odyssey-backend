@@ -1,0 +1,8 @@
+# Specify the backend service
+[backend]
+root = "cosmos-odyssey-backend"
+build = "composer install && php artisan config:clear && php artisan cache:clear && php artisan migrate --force"
+start = "php artisan serve --host=0.0.0.0 --port=$PORT"
+
+[backend.nix]
+php_version = "php81" # Use PHP 8.1 or php82
